@@ -1,24 +1,23 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, View } from 'react-native';
+import styled from 'styled-components';
 import DataProvider  from './contexts/dataProvider';
 import Example from './components/example'
 
 export default function App() {
   return (
     <DataProvider>
-      <View style={styles.container}>
+      <Content>
         <Example/>
         <StatusBar style="auto" />
-      </View>
+      </Content>
     </DataProvider>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+const Content = styled.div`
+  display: flex;
+  height: 100vh;
+  background-color: #fff;
+  align-items: center;
+  justify-content: center;
+`;
